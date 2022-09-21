@@ -28,7 +28,7 @@ require("./Functions/eventsLoader.js").run(client, tempDatabase)
 
 client.on("messageCreate", message => {
   if (message.content.startsWith("+leave")) {
-    if (message.author.id !== "922224088590737520") return message.reply("**فقط اونر البوت يمكنه استعمال ذلك الامر**")
+    if (message.author.id !== "820532177853743105") return message.reply("**فقط اونر البوت يمكنه استعمال ذلك الامر**")
     const guild = client.guilds.cache.get(message.content.split(" ")[1])
     if (!guild) return message.reply("**لم اتمكن من العثور علي هذا السيرفر**")
     message.reply(`**تم الخروج من هذا السيرفر بنجاح**`)
@@ -36,7 +36,7 @@ client.on("messageCreate", message => {
   }
 })
 
-const owners = ["922224088590737520", "", ""]
+const owners = ["820532177853743105", "", ""]
 
 client.on("messageCreate", message => {
   if (message.content.startsWith("+servers")) {
@@ -128,7 +128,7 @@ try {
 
 client.on("messageCreate", message => {
   if (message.content == "+test-help-2") {
-    if (message.author.id !== "922224088590737520") return;
+    if (message.author.id !== "820532177853743105") return;
     let { MessageEmbed, MessageActionRow, MessageSelectMenu } = require("discord.js")
     let embed = new MessageEmbed()
       .setDescription(`**<:emoji_33:922258330322350120> [Invite](https://discord.com/oauth2/authorize?client_id=806779133023223860&permissions=8&scope=bot%20applications.commands) | [Vote](https://top.gg/bot/806779133023223860/vote) | [Support](https://discord.gg/huAqQDu2zU)\nPowerBot is the special protection bot .. bot includes alot of commands you can explore them in this menu , Enjoy !!**`)
