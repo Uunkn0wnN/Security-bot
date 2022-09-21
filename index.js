@@ -28,10 +28,10 @@ require("./Functions/eventsLoader.js").run(client, tempDatabase)
 
 client.on("messageCreate", message => {
   if (message.content.startsWith("+leave")) {
-    if (message.author.id !== "820532177853743105") return message.reply("**فقط اونر البوت يمكنه استعمال ذلك الامر**")
+    if (message.author.id !== "820532177853743105") return message.reply("**hanya satrio yang dapat menggunakan nya**")
     const guild = client.guilds.cache.get(message.content.split(" ")[1])
-    if (!guild) return message.reply("**لم اتمكن من العثور علي هذا السيرفر**")
-    message.reply(`**تم الخروج من هذا السيرفر بنجاح**`)
+    if (!guild) return message.reply("**Saya tidak dapat menemukan server ini**")
+    message.reply(`**Server ini telah berhasil keluar**`)
     guild.leave()
   }
 })
@@ -40,7 +40,7 @@ const owners = ["820532177853743105", "", ""]
 
 client.on("messageCreate", message => {
   if (message.content.startsWith("+servers")) {
-    if (!owners.includes(message.author.id)) return message.reply("**فقط اونر البوت يمكنه استعمال ذلك الامر**")
+    if (!owners.includes(message.author.id)) return message.reply("**hanya satrio yang dapat menggunakan nya**")
     const guilds = client.guilds.cache.map(g => `${g.name}`).join("\n")
     const { Util } = require("discord.js")
     const [first, ...rest] = Util.splitMessage(guilds, { maxLength: 2000 })
@@ -55,7 +55,7 @@ client.on("messageCreate", message => {
 
 const Topgg = require("@top-gg/sdk")
 const app = require("express")()
-const webhook = new Topgg.Webhook("qxOfpiVeJB9aWCyqMqBdLRpUfTIXk3SfSr5uK")
+const webhook = new Topgg.Webhook("")
 
 app.post("/dblwebhook", webhook.listener(vote => {
    let user = client.users.cache.get(vote.user)
